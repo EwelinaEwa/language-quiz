@@ -14,22 +14,25 @@
 <body>
 	<!-- TODO: add a form for the user to play the game -->
 
-    <form>
-        <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <input class="form-control col-sm-3" type="text" placeholder="Enter your name">
-        </div>
-    </form>
-    <p class="greeting">Bonjour</p>
-    <p class="randomWord">Word to be translated:</p>
+<!--    <form>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="name" class="col-sm-2 col-form-label">Name</label>-->
+<!--            <input class="form-control col-sm-3" type="text" name="name" placeholder="Enter your name">-->
+<!--            <button type="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--    <p class="randomWord">Word to be translated: --><?//= $game->chosenWord->frenchWord ?><!--</p>-->
+    <p class="randomWord">Word to be translated: <?= $game->chosenWord->frenchWord ?></p>
     <form>
         <div class="form-group row">
             <label for="wordTranslation" class="col-sm-2 col-form-label">Translation</label>
-            <input class="form-control col-sm-3" type="text" placeholder="Translate the word">
-            <button type="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>
+            <input class="form-control col-sm-3" type="text" name="translation" placeholder="Translate the word">
+            <button type="submit" name="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>
         </div>
     </form>
-    <p class="answerCheck">Your answer is correct/not correct</p>
+    <p class="answerCheck">Your answer is: correct/not correct</p>
+    <p class="correctAnswer">Correct answer is:</p>
+    <p class="score">Your current score is:</p>
 
 </body>
 </html>
