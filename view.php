@@ -17,9 +17,7 @@
     <form>
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-                <input class="form-control col-sm-4" type="text" placeholder="Enter your name">
-            </div>
+            <input class="form-control col-sm-3" type="text" placeholder="Enter your name">
         </div>
     </form>
     <p class="greeting">Bonjour</p>
@@ -27,9 +25,8 @@
     <form>
         <div class="form-group row">
             <label for="wordTranslation" class="col-sm-2 col-form-label">Translation</label>
-            <div class="col-sm-10">
-                <input class="form-control col-sm-4" type="text" placeholder="Translate the word">
-            </div>
+            <input class="form-control col-sm-3" type="text" placeholder="Translate the word">
+            <button type="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>
         </div>
     </form>
     <p class="answerCheck">Your answer is correct/not correct</p>
