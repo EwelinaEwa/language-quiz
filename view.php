@@ -5,9 +5,34 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Game</title>
 </head>
 <body>
 	<!-- TODO: add a form for the user to play the game -->
+
+    <form>
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input class="form-control col-sm-4" type="text" placeholder="Enter your name">
+            </div>
+        </div>
+    </form>
+    <p class="greeting">Bonjour</p>
+    <p class="randomWord">Word to be translated:</p>
+    <form>
+        <div class="form-group row">
+            <label for="wordTranslation" class="col-sm-2 col-form-label">Translation</label>
+            <div class="col-sm-10">
+                <input class="form-control col-sm-4" type="text" placeholder="Translate the word">
+            </div>
+        </div>
+    </form>
+    <p class="answerCheck">Your answer is correct/not correct</p>
+
 </body>
 </html>
