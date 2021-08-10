@@ -21,7 +21,10 @@
 <!--            <button type="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>-->
 <!--        </div>-->
 <!--    </form>-->
-<!--    <p class="randomWord">Word to be translated: --><?//= $game->chosenWord->frenchWord ?><!--</p>-->
+    <br>
+    <br>
+    <br>
+    <br>
     <p class="randomWord">Word to be translated: <?= $game->chosenWord->frenchWord ?></p>
     <form>
         <div class="form-group row">
@@ -30,6 +33,7 @@
             <button type="submit" name="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>
         </div>
     </form>
+<!--    --><?//= $_SESSION["translation"] ?>
     <p class="answerCheck">Your answer is: correct/not correct</p>
     <p class="correctAnswer">Correct answer is:</p>
     <p class="score">Your current score is:</p>
