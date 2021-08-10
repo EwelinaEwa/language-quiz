@@ -25,7 +25,7 @@
     <br>
     <br>
     <br>
-    <p class="randomWord">Word to be translated: <?= $game->chosenWord->frenchWord ?></p>
+    <p class="randomWord">Word to be translated: <b><?= $game->chosenWord->frenchWord ?></b></p>
     <form method="post">
         <div class="form-group row">
             <label for="wordTranslation" class="col-sm-2 col-form-label">Translation</label>
