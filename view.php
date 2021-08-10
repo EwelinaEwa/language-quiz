@@ -33,10 +33,8 @@
             <button type="submit" name="submit" class="btn btn-primary col-sm-1 ml-2">Submit</button>
         </div>
     </form>
-<!--    --><?//= $_SESSION["translation"] ?>
-    <p class="answerCheck">Your answer is: <?= $game->message ?></p>
-    <p class="correctAnswer">Correct answer is: <?= $game->chosenWord->translation ?></p>
-    <p class="score">Your current score is:</p>
+    <p class="answerCheck"><?= $game->message ?></p>
+<!--    <p class="score">Your current score is:</p>-->
 
 </body>
 </html>
