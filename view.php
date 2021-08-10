@@ -34,7 +34,7 @@
         </div>
     </form>
     <p class="answerCheck"><?= $game->message ?></p>
-<!--    <p class="score">Your current score is:</p>-->
+    <p class="score">Your current score is: <b><?= $_SESSION['score']?></b></p>
 
 </body>
 </html>

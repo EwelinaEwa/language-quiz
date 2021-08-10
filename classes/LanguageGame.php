@@ -36,6 +36,7 @@ class LanguageGame
         // TODO: select a random word for the user to translate
         $this->chosenWord = $this->words[array_rand($this->words, 1)];
         $_SESSION['translation'] = serialize($this->chosenWord);
+        $_SESSION['score'] = 0;
     }
 
     private function guessWasSubmitted()
@@ -48,6 +49,8 @@ class LanguageGame
         // TODO: generate a message for the user that can be shown
         if ($this->chosenWord->verify($userGuess) === true) {
             $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>correct</b>.";
+            $_SESSION['score'] += 1;
+
         } else {
             $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>not correct</b>. <br> The correct translation is: <b>{$this->chosenWord->translation}</b>.";
         }
