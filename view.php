@@ -34,8 +34,8 @@
         </div>
     </form>
 <!--    --><?//= $_SESSION["translation"] ?>
-    <p class="answerCheck">Your answer is: correct/not correct</p>
-    <p class="correctAnswer">Correct answer is:</p>
+    <p class="answerCheck">Your answer is: <?= $game->message ?></p>
+    <p class="correctAnswer">Correct answer is: <?= $game->chosenWord->translation ?></p>
     <p class="score">Your current score is:</p>
 
 </body>

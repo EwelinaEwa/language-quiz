@@ -12,11 +12,13 @@ class Word
         $this->translation = $translation;
     }
 
-    public function verify(string $answer)
+    public function verify(string $userGuess) :bool
     {
         // TODO: use this function to verify if the provided answer by the user matches the correct one
-        if (isset($_POST["submit"]) && ($answer == $_POST['chosenWord'])) {
-           return true;
+        if ($userGuess == $this->translation) {
+            return true;
+        } else {
+            return false;
         }
 
         // Bonus: allow answers with different casing (example: both bread or Bread can be correct answers, even though technically it's a different string)

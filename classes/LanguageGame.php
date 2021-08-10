@@ -5,6 +5,7 @@ class LanguageGame
 {
     private array $words = [];
     public Word $chosenWord;
+    public string $message = '';
 
     public function __construct()
     {
@@ -21,31 +22,34 @@ class LanguageGame
     public function run()
     {
         // TODO: check for option A or B
+        $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
+        if (!$guessSubmitted) {
+            $this->gameSetup();
+        } else {
+            $this->guessWasSubmitted();
+        }
+    }
 
-
+    private function gameSetup()
+    {
         // Option A: user visits site first time (or wants a new word)
         // TODO: select a random word for the user to translate
         $this->chosenWord = $this->words[array_rand($this->words, 1)];
-        $_SESSION['translation'] = $this->chosenWord;
+        $_SESSION['translation'] = serialize($this->chosenWord);
+    }
 
+    private function guessWasSubmitted()
+    {
         // Option B: user has just submitted an answer
+        $this->chosenWord = unserialize($_SESSION['translation']);
         // TODO: verify the answer (use the verify function in the word class) - you'll need to get the used word from the array first
-        if(isset($_POST["submit"]) && !empty($_POST["translate"])) {
-                $answer = $_POST["translate"];
-//                var_dump($answer);
-                return $answer;
-
-        }
+        $userGuess = $_POST["translation"];
 
         // TODO: generate a message for the user that can be shown
-        if ($this->chosenWord->verify(answer)===true) {
-            $result = "correct";
+        if ($this->chosenWord->verify($userGuess) === true) {
+            $this->message = "correct";
         } else {
-            $result = "not correct";
+            $this->message = "not correct";
         }
-        var_dump($result);
-        return $result;
-
-
     }
 }
