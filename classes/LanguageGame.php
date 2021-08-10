@@ -25,7 +25,10 @@ class LanguageGame
 
     public function run()
     {
-        $_SESSION['score'] += 0;
+        if (!$_SESSION) {
+            $_SESSION['score'] = 0;
+        }
+
         // TODO: check for option A or B
         $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
         if (!$guessSubmitted) {
@@ -57,7 +60,7 @@ class LanguageGame
             $_SESSION['score'] += 1;
         } else {
             $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>not correct</b>. <br> The correct translation is: <b>{$this->chosenWord->translation}</b>.";
-//            $_SESSION['score'] -= 1;
+            $_SESSION['score'] -= 1;
         }
     }
 }
