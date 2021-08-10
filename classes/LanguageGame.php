@@ -47,9 +47,9 @@ class LanguageGame
 
         // TODO: generate a message for the user that can be shown
         if ($this->chosenWord->verify($userGuess) === true) {
-            $this->message = "Your answer is <b>correct</b>.";
+            $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>correct</b>.";
         } else {
-            $this->message = "Your answer is <b>not correct</b>. <br> The correct translation is: <b>{$this->chosenWord->translation}</b>.";
+            $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>not correct</b>. <br> The correct translation is: <b>{$this->chosenWord->translation}</b>.";
         }
     }
 }
