@@ -25,14 +25,9 @@ class LanguageGame
 
     public function run()
     {
-        if (!$_SESSION) {
+        if ((!$_SESSION) || (isset($_POST['reset']))){
             $_SESSION['score'] = 0;
         }
-
-        if (isset($_POST['reset'])) {
-            $_SESSION['score'] = 0;
-        }
-
 
         // TODO: check for option A or B
         $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
@@ -49,7 +44,6 @@ class LanguageGame
         // TODO: select a random word for the user to translate
         $this->chosenWord = $this->words[array_rand($this->words, 1)];
         $_SESSION['translation'] = serialize($this->chosenWord);
-
     }
 
     private function guessWasSubmitted()
