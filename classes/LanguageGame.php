@@ -29,6 +29,11 @@ class LanguageGame
             $_SESSION['score'] = 0;
         }
 
+        if (isset($_POST['reset'])) {
+            $_SESSION['score'] = 0;
+        }
+
+
         // TODO: check for option A or B
         $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
         if (!$guessSubmitted) {
