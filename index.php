@@ -38,7 +38,7 @@ require_once 'classes/Word.php';
 $game = new LanguageGame();
 $game->run();
 
-session_destroy();
+//session_destroy();
 
 
 require 'view.php';

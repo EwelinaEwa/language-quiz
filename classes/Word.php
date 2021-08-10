@@ -12,7 +12,7 @@ class Word
         $this->translation = $translation;
     }
 
-    public function verify(string $userGuess) :bool
+    public function verify(string $userGuess) : bool
     {
         // TODO: use this function to verify if the provided answer by the user matches the correct one
         if ($userGuess == $this->translation) {
