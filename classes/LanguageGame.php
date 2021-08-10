@@ -25,6 +25,7 @@ class LanguageGame
 
     public function run()
     {
+        $_SESSION['score'] += 0;
         // TODO: check for option A or B
         $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
         if (!$guessSubmitted) {
