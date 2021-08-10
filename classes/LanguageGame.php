@@ -6,6 +6,8 @@ class LanguageGame
     private array $words = [];
     public Word $chosenWord;
     public string $message = '';
+    public int $score;
+
 
     public function __construct()
     {
@@ -19,12 +21,30 @@ class LanguageGame
         }
     }
 
+//    public function score() {
+//        if ($_SESSION['score'] = ""){
+//            $score = 0;
+//        }
+//        else {
+//            $score = $_SESSION['score'];
+//        }
+//        return intval($score);
+//    }
+
+    public function anotherWord() {
+        if (isset($_POST["anotherWord"])){
+            run();
+        }
+    }
+
+
     public function run()
     {
         // TODO: check for option A or B
         $guessSubmitted = isset($_POST["submit"]) && !empty($_POST["translation"]);
         if (!$guessSubmitted) {
             $this->gameSetup();
+
         } else {
             $this->guessWasSubmitted();
         }
@@ -36,7 +56,7 @@ class LanguageGame
         // TODO: select a random word for the user to translate
         $this->chosenWord = $this->words[array_rand($this->words, 1)];
         $_SESSION['translation'] = serialize($this->chosenWord);
-        $_SESSION['score'] = 0;
+
     }
 
     private function guessWasSubmitted()
@@ -50,7 +70,6 @@ class LanguageGame
         if ($this->chosenWord->verify($userGuess) === true) {
             $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>correct</b>.";
             $_SESSION['score'] += 1;
-
         } else {
             $this->message = "Your answer <b>\"{$userGuess}\"</b> is <b>not correct</b>. <br> The correct translation is: <b>{$this->chosenWord->translation}</b>.";
         }
